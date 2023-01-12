@@ -21,7 +21,6 @@ const imagesItemEl = `<li><img src="${images[i].url} alt="${images[i].alt}" widt
   imagesListEl.insertAdjacentHTML("afterbegin", imagesItemEl); 
 }
 
-
 imagesListEl.style.display = "flex"; 
 imagesListEl.style.gap= "30px";
 images.style.listStyle = "none"; 
