@@ -13,7 +13,7 @@ const containerBoxesRef = document.getElementById('boxes');
 
 dataCreateRef.addEventListener('click', createBoxes); 
 
-// dataDestroyRef.addEventListener('click', destroyBoxes); 
+dataDestroyRef.addEventListener('click', destroyBoxes); 
 
 function createBoxes(amount) { 
 
@@ -24,15 +24,19 @@ Number(amount.currentTarget.value = inputRef.value);
 for(let i = 0; i < getNumberOfAmount; i += 1) {
   let createNewDivs = document.createElement('div'); 
   console.log("🚀 createNewDivs", createNewDivs); 
+  
+  createNewDivs.style.width = '30px';
+  createNewDivs.style.height = '30px';
+  createNewDivs.style.backgroundColor = getRandomHexColor(); 
+
+  containerBoxesRef.append(createNewDivs);
+}
 }
 
+function destroyBoxes() {
+containerBoxesRef.remove(); 
 }
 
-// function destroyBoxes(event) {
-// event.currentTarget.reset(); 
-// }
-// containerBoxesRef.elements.style.backgroundColor = getRandomHexColor();
-
-// function getRandomHexColor() {
-//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-// }
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
