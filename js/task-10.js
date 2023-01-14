@@ -6,27 +6,33 @@ const dataDestroyRef = document.querySelector('[data-destroy]');
 
 const containerBoxesRef = document.getElementById('boxes'); 
 
-inputRef.addEventListener('input', handleCreateNumber);  
-
-function handleCreateNumber(event) { 
-let getInputNumber = Number(event.currentTarget.value);
-getInputNumber = createBoxes();  
-}
+// inputRef.addEventListener('input', (event) => {
+// const numberFromInput = +event.currentTarget.value;
+// numberFromInput === createBoxes(); 
+// });  
 
 dataCreateRef.addEventListener('click', createBoxes); 
 
+dataDestroyRef.addEventListener('click', destroyBoxes); 
+
 function createBoxes(amount) { 
-  console.log(amount);  
-  // const createNewDivs = document.createElement('div'); 
+// amount.currentTarget.value = handleInputValue(); 
+const getNumberOfAmount = Number(amount.currentTarget.value = inputRef.value);
+  console.log(getNumberOfAmount);  
+for (const item of getNumberOfAmount) {
+let createNewDivs = document.createElement('div'); 
+console.log("🚀 createNewDivs", createNewDivs);
+
+}
   
+  // createNewDivs += amount; 
   // containerBoxesRef.append(); 
 }
-
-dataDestroyRef.addEventListener('click', destroyBoxes); 
 
 function destroyBoxes(event) {
 event.currentTarget.reset(); 
 }
+// containerBoxesRef.elements.style.backgroundColor = getRandomHexColor();
 
 // function getRandomHexColor() {
 //   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
