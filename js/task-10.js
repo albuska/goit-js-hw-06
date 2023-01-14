@@ -6,10 +6,6 @@ const dataDestroyRef = document.querySelector('[data-destroy]');
 
 const containerBoxesRef = document.getElementById('boxes'); 
 
-// inputRef.addEventListener('input', (event) => {
-// const numberFromInput = +event.currentTarget.value;
-// numberFromInput === createBoxes(); 
-// });  
 
 dataCreateRef.addEventListener('click', createBoxes); 
 
