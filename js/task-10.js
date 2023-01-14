@@ -21,12 +21,11 @@ const getNumberOfAmount =
 Number(amount.currentTarget.value = inputRef.value);
   console.log(getNumberOfAmount);  
 
-  let createNewDivs = document.createElement('div') * getNumberOfAmount; 
-console.log("🚀 createNewDivs", createNewDivs);
+for(let i = 0; i < getNumberOfAmount; i += 1) {
+  let createNewDivs = document.createElement('div'); 
+  console.log("🚀 createNewDivs", createNewDivs); 
+}
 
-  
-  // createNewDivs += amount; 
-  // containerBoxesRef.append(); 
 }
 
 // function destroyBoxes(event) {
