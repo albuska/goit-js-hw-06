@@ -10,29 +10,33 @@ dataCreateRef.addEventListener('click', createBoxes);
 
 dataDestroyRef.addEventListener('click', destroyBoxes);
 
+
 function createBoxes(amount) {
   const getNumberOfAmount = Number((amount.currentTarget.value = inputRef.value));
-
+  const boxDivs = [];
   let containerSizes = 20;
 
   for (let i = 0; i < getNumberOfAmount; i += 1) {
-    let createNewDivs = document.createElement('div');
-    console.log('🚀 createNewDivs', createNewDivs);
-    console.log(i);
-    containerSizes += 10;
+    const createNewDivs = document.createElement('div');
 
+    containerSizes += 10;
+    createNewDivs.classList.add('new-box');
     createNewDivs.style.width = containerSizes + 'px';
     createNewDivs.style.height = containerSizes + 'px';
 
     createNewDivs.style.backgroundColor = getRandomHexColor();
 
-    containerBoxesRef.append(createNewDivs);
+    boxDivs.push(createNewDivs); 
   }
+  containerBoxesRef.append(...boxDivs);
 }
 
 function destroyBoxes() {
-  containerBoxesRef.remove();
-  inputRef.value = '';
+  const boxMainDivs = document.querySelectorAll('.new-box');
+  for (const div of boxMainDivs) {
+   containerBoxesRef.removeChild(div);
+  }
+  inputRef.value = ''; 
 }
 
 function getRandomHexColor() {
