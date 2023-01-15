@@ -9,15 +9,17 @@ const ingredients = [
 
 const list = document.querySelector('#ingredients');
 
-// 1 СПОСІБ
+let itemsBox = []; 
+
 for (const ingredient of ingredients) {
-  const itemRef = document.createElement('li'); 
+ const itemRef = document.createElement('li'); 
   itemRef.textContent = ingredient; 
   itemRef.classList.add('item');
-
-  list.append(itemRef);
+  
+  itemsBox.push(itemRef); 
+  
 }
-
+list.append(...itemsBox);
 console.log(list);
 
 

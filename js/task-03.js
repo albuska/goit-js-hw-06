@@ -15,15 +15,21 @@ const images = [
 
 const imagesListEl = document.querySelector('.gallery');
 
+let imagesBox = [];  
+
 for(let i = 0; i < images.length; i += 1) {
 const imagesItemEl = `<li><img src="${images[i].url} alt="${images[i].alt}" width="450" height="320"/></li>`;
-  // onsole.log(imagesItemEl);c  
-  imagesListEl.insertAdjacentHTML("afterbegin", imagesItemEl); 
+
+imagesBox.push(imagesItemEl);
+
 }
+console.log(...imagesBox);
+
+imagesListEl.insertAdjacentHTML("afterbegin", imagesBox);
 
 imagesListEl.style.display = "flex"; 
 imagesListEl.style.gap= "30px";
-images.style.listStyle = "none"; 
+
 
 
 // const imageEl2 = document.createElement('img');
